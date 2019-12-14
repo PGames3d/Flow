@@ -7,6 +7,7 @@ public class CustomFragmentEvent {
     private int id;
 
     public CustomFragmentEvent(){
+        
 
     }
     public CustomFragmentEvent(Fragment fragment, int id) {
