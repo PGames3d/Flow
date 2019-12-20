@@ -1,7 +1,9 @@
 package com.pgames.flow.ui.home;
 
 import android.app.Person;
+import android.location.Address;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.pgames.flow.R;
@@ -30,27 +33,16 @@ public class HomeFragment extends Fragment {
     private RecyclerView recyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager layoutManager;
+    private DataSnapshot snapshot;
     private String[] allUsers;
     private ArrayList<MyListData> myListData;
+    private static final String TAG = "HomeFragment";
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 //        homeViewModel =
 //                ViewModelProviders.of(this).get(HomeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_home, container, false);
-//        final MyListData[] myListData = new MyListData[] {
-//                new MyListData("Parshuram","7350280897" ,android.R.drawable.ic_dialog_email),
-//                new MyListData("Akshada","7028469285", android.R.drawable.ic_dialog_info),
-//                new MyListData("Parshuram","7350280897" ,android.R.drawable.ic_dialog_email),
-//                new MyListData("Akshada","7028469285", android.R.drawable.ic_dialog_info),
-//                new MyListData("Parshuram","7350280897" ,android.R.drawable.ic_dialog_email),
-//                new MyListData("Akshada","7028469285", android.R.drawable.ic_dialog_info),
-//                new MyListData("Parshuram","7350280897" ,android.R.drawable.ic_dialog_email),
-//                new MyListData("Akshada","7028469285", android.R.drawable.ic_dialog_info),
-//                new MyListData("Parshuram","7350280897" ,android.R.drawable.ic_dialog_email),
-//                new MyListData("Akshada","7028469285", android.R.drawable.ic_dialog_info),
-//
-//        };
-//
+
         myListData = new ArrayList<>();
         RecyclerView recyclerView = (RecyclerView) root.findViewById(R.id.recyclerView);
         final MyListAdapter adapter = new MyListAdapter(myListData);
@@ -59,23 +51,15 @@ public class HomeFragment extends Fragment {
         recyclerView.setAdapter(adapter);
 
         if (mUser!=null){
-            FirebaseDatabase.getInstance().getReference().child("user")
-                    .addValueEventListener(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        allUsers = new String[(int) dataSnapshot.getChildrenCount()];
-                        for (DataSnapshot childSnap : dataSnapshot.getChildren()){
-                            if (!childSnap.getKey().equals(mData.getKey()))
-                            getPersonalData(adapter,childSnap);
+            try {
+                String s = mData.child("Address").child("District").push().getKey();
+                Toast.makeText(getContext(), s, Toast.LENGTH_SHORT).show();
+//                DatabaseReference reference =
+                Log.i(TAG,s);
 
-                        }
-                        }
-
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                        }
-                    });
+            }catch (Exception e){
+                Log.e(TAG,"Exception",e);
+            }
 
         }
 
@@ -115,6 +99,10 @@ public class HomeFragment extends Fragment {
 
                     }
                 });
+    }
+
+    private void getuserList(String district, final String work){
+
     }
 
 

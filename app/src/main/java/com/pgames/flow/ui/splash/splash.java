@@ -78,13 +78,6 @@ Handler handler;
 //                                        MainActivity.fragmentManager.beginTransaction().replace(R.id.main_host_fragment,new RegisterDetails()).commit();
 
                                             break;
-                                        case "half":
-                                            event = new CustomFragmentEvent(new FinalRegister(),R.id.main_host_fragment);
-                                            EventBus.getDefault().post(event);
-//                                        MainActivity.fragmentManager.beginTransaction().replace(R.id.main_host_fragment,new FinalRegister()).commit();
-
-                                            //Toast.makeText(MainActivity.this, "Something Went Wrong", Toast.LENGTH_SHORT).show();
-                                            break;
                                         case "complete":
                                             startActivity(new Intent(getContext(), home.class));
                                             getActivity().finish();

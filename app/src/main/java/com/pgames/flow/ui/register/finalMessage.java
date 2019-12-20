@@ -31,7 +31,7 @@ public class finalMessage extends Fragment{
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    startActivity(new Intent(getActivity(), home.class));
+                    startActivity(new Intent(getContext(), home.class));
                     getActivity().finish();
                }
             });

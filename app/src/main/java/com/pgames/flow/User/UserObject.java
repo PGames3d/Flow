@@ -1,4 +1,4 @@
-package com.pgames.flow.User;
+package com.pgames.flow.user;
 
 import java.io.Serializable;
 
