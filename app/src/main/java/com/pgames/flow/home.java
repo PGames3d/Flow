@@ -2,9 +2,6 @@ package com.pgames.flow;
 
 import android.os.Bundle;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-
 import android.view.View;
 
 import androidx.annotation.NonNull;
@@ -13,6 +10,8 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -20,6 +19,9 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.pgames.flow.ui.home.MyListAdapter;
 
 
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -28,6 +30,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -36,9 +39,10 @@ public class home extends AppCompatActivity {
     private AppBarConfiguration mAppBarConfiguration;
     private TextView mUserName;
     private TextView mUserId;
+    private ImageView mProfilePic;
     String mPhone,
             mName;
-
+   private StorageReference storageReference;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,10 +74,14 @@ public class home extends AppCompatActivity {
 
 
 
+        new MyListAdapter(home.this);
         View headerView = navigationView.getHeaderView(0);
         final TextView userName = headerView.findViewById(R.id.userName);
         final TextView userId   = headerView.findViewById(R.id.userId);
+        final ImageView profilePic = headerView.findViewById(R.id.imageView);
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+       final FirebaseStorage storage = FirebaseStorage.getInstance();
+
         if (user != null) {
             FirebaseDatabase.getInstance().getReference().child("user").child(user.getUid())
                     .child("Personal")
@@ -83,6 +91,12 @@ public class home extends AppCompatActivity {
                         try {
                             userName.setText(dataSnapshot.child("Name").getValue().toString());
                             userId.setText(dataSnapshot.child("Phone").getValue().toString());
+
+                           String s=dataSnapshot.child("Profile-Image").getValue().toString();
+                            Toast.makeText(home.this, s, Toast.LENGTH_SHORT).show();
+//                            Picasso.get().load(s).into(profilePic);
+//                            profilePic.setImageURI();
+                            Glide.with(home.this).load(s).apply(RequestOptions.circleCropTransform()).into(profilePic);
                         }catch (Exception e){
                             Toast.makeText(home.this, e.getMessage(), Toast.LENGTH_LONG).show();
                         }

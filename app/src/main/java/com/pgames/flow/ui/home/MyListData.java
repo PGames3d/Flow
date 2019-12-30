@@ -2,51 +2,59 @@ package com.pgames.flow.ui.home;
 
 import java.io.Serializable;
 
-public class MyListData implements Serializable {
+class MyListData implements Serializable {
 
     private String name,
-    phone,
-    profileStatus;
+            phone,
+            address,
+            profilePic,
+            work;
 
-   // private int imgId;
-
-
-
-    public MyListData(String name, String phone, String profileStatus) {
+    MyListData(String name, String phone, String address, String profilePic, String work) {
         this.name = name;
         this.phone = phone;
-        this.profileStatus = profileStatus;
+        this.address = address;
+        this.profilePic = profilePic;
+        this.work = work;
     }
 
     public String getName() {
         return name;
     }
 
-    public String getPhone() {
-        return phone;
-    }
-
-
-    public String getProfileStatus() {
-        return profileStatus;
-    }
-
-    public void setProfileStatus(String profileStatus) {
-        this.profileStatus = profileStatus;
-    }
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getPhone() {
+        return phone;
     }
 
     public void setPhone(String phone) {
         this.phone = phone;
     }
 
-//    public int getImgId() {
-//        return imgId;
-//    }
-//
-//    public void setImgId(int imgId) {
-//        this.imgId = imgId;
-//    }
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getProfilePic() {
+        return profilePic;
+    }
+
+    public void setProfilePic(String profilePic) {
+        this.profilePic = profilePic;
+    }
+
+    public String getWork() {
+        return work;
+    }
+
+    public void setWork(String work) {
+        this.work = work;
+    }
 }

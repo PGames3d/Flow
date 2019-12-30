@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -197,9 +198,10 @@ public class FinalRegister extends Fragment implements FirebaseHandler {
                                     mDataMap.put("Personal/Profile-Status","complete");
                                     mDataMap.put("User-Type/User",mUserType.getSelectedItem().toString());
                                     mDataMap.put("User-Type/Requirement",mGetRequirement.getSelectedItem().toString());
-                                    mData.addValueEventListener(new ValueEventListener() {
+                                    mData.addListenerForSingleValueEvent(new ValueEventListener() {
                                         @Override
                                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                            Log.e("Start onDataChange","Error");
                                             try {
                                                 DataTransportor transportor = new DataTransportor();
                                                 mData.updateChildren(transportor.getmUserMap());
@@ -207,12 +209,12 @@ public class FinalRegister extends Fragment implements FirebaseHandler {
                                             }catch (Exception e){
                                                 Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
                                             }
-
+                                            Log.e("End onDataChange","Error");
                                         }
 
                                         @Override
                                         public void onCancelled(@NonNull DatabaseError databaseError) {
-
+                                            Log.e("Start onCancelled",databaseError.getMessage());
                                         }
                                     });
 
@@ -278,8 +280,9 @@ public class FinalRegister extends Fragment implements FirebaseHandler {
     public void nextAction() {
 //        UserLogin login = new UserLogin();
 //        login.userIsLoggedIn();
-
+        Log.e("Start nextAction","Error");
         CustomFragmentEvent event = new CustomFragmentEvent(new finalMessage(),R.id.main_host_fragment);
         EventBus.getDefault().post(event);
+        Log.e("End nextAction","Error");
     }
 }

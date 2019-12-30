@@ -191,7 +191,7 @@ public class Login extends Fragment {
         if (user != null) {
 
             DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("user").child(user.getUid()).child("Personal");
-            databaseReference.addValueEventListener(new ValueEventListener() {
+            databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {

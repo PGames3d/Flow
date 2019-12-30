@@ -43,4 +43,8 @@ dependencies {
     implementation 'org.greenrobot:eventbus:3.1.1'
     implementation 'com.firebase:geofire-android:3.0.0'
 //    implementation 'com.android.support:multidex:1.0.3'
+    //Picasso
+//    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'com.github.bumptech.glide:glide:4.10.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.10.0'
 }

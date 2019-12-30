@@ -25,10 +25,12 @@ public class MainActivity extends AppCompatActivity {
         fragmentManager = getSupportFragmentManager();
         fragmentTransaction = fragmentManager.beginTransaction();
 
+
         if (findViewById(R.id.main_host_fragment) != null) {
             if (savedInstanceState != null) {
                 return;
             }
+
             splash splash  = new splash();
             fragmentTransaction.add(R.id.main_host_fragment, splash).commit();
         }
@@ -37,7 +39,9 @@ public class MainActivity extends AppCompatActivity {
     }
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onFragmentChange(CustomFragmentEvent event){
-        fragmentManager.beginTransaction().replace(event.getId(),event.getFragment()).commit();
+        fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.setCustomAnimations(R.anim.enter, R.anim.exit, R.anim.pop_enter, R.anim.pop_exit);
+        fragmentTransaction.replace(event.getId(),event.getFragment()).commit();
     }
 
 
