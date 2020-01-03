@@ -3,6 +3,7 @@ package com.pgames.flow.ui.register;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.util.Log;
@@ -17,12 +18,15 @@ import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import com.pgames.flow.CustomFragmentEvent;
 import com.pgames.flow.DataTransportor;
@@ -198,18 +202,19 @@ public class FinalRegister extends Fragment implements FirebaseHandler {
                                     mDataMap.put("Personal/Profile-Status","complete");
                                     mDataMap.put("User-Type/User",mUserType.getSelectedItem().toString());
                                     mDataMap.put("User-Type/Requirement",mGetRequirement.getSelectedItem().toString());
-                                    mData.addListenerForSingleValueEvent(new ValueEventListener() {
+                                    mData.addValueEventListener(new ValueEventListener() {
                                         @Override
                                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                            Log.e("Start onDataChange","Error");
+
                                             try {
                                                 DataTransportor transportor = new DataTransportor();
                                                 mData.updateChildren(transportor.getmUserMap());
+                                                addData();
                                                 nextAction();
                                             }catch (Exception e){
                                                 Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
                                             }
-                                            Log.e("End onDataChange","Error");
+
                                         }
 
                                         @Override
@@ -241,36 +246,34 @@ public class FinalRegister extends Fragment implements FirebaseHandler {
 
     @Override
     public void addData() {
-        mData.addValueEventListener(new ValueEventListener() {
+        Log.e("mDataMap",mDataMap.get("Address/District").toString()+" "+mUser.getUid());
+        String district = mDataMap.get("Address/District").toString();
+        mValidateData.child("user-availability-area").child(district)
+                .child(mUser.getUid()).addValueEventListener(new ValueEventListener() {
             @Override
-            public void onDataChange(@NonNull final DataSnapshot dataSnapshot) {
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                Map<String,Object> data = new HashMap<>();
+                String  address = mDataMap.get("Address/Goan").toString()+","+mDataMap.get("Address/Taluka").toString(),
+                        Name = mDataMap.get("Personal/Name").toString(),
+                        Phone = mUser.getPhoneNumber(),
+                        work = mDataMap.get("User-Type/Requirement").toString();
 
-                try {
-
-                    //if starts here
-                    if (!dataSnapshot.child("User-Type").exists()){
-
-                        mUserMap.put("Personal/Profile-Status","complete");
-                        mUserMap.put("User-Type/User",mUserType.getSelectedItem().toString());
-                        mUserMap.put("User-Type/Requirement",mGetRequirement.getSelectedItem().toString());
-                        mData.updateChildren(mUserMap);
-                        nextAction();
-                    }else {
-
-                        nextAction();
+                data.put("Address",address);
+                data.put("Name",Name);
+                data.put("Phone",Phone);
+                data.put("work",work);
+                mValidateData.updateChildren(data, new DatabaseReference.CompletionListener() {
+                    @Override
+                    public void onComplete(@Nullable DatabaseError databaseError, @NonNull DatabaseReference databaseReference) {
+                        Log.e("data","Updated"+databaseError.getDetails());
                     }
-                    //if ends here
-
-                }catch (Exception e){
-                    Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
-                }
-
+                });
 
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-
+            Log.e("addData",databaseError.getDetails());
             }
         });
     }
@@ -280,9 +283,9 @@ public class FinalRegister extends Fragment implements FirebaseHandler {
     public void nextAction() {
 //        UserLogin login = new UserLogin();
 //        login.userIsLoggedIn();
-        Log.e("Start nextAction","Error");
+
         CustomFragmentEvent event = new CustomFragmentEvent(new finalMessage(),R.id.main_host_fragment);
         EventBus.getDefault().post(event);
-        Log.e("End nextAction","Error");
+
     }
 }

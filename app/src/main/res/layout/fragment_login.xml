@@ -26,6 +26,7 @@
             android:textSize="20dp"
             android:hint="Mobile No"/>
 
+
         <EditText
             android:id="@+id/otp_input"
             android:layout_width="match_parent"
@@ -51,7 +52,7 @@
             android:layout_alignTop="@id/otp_input"
             android:layout_marginTop="90dp"
             android:layout_centerHorizontal="true"
-            android:background="@drawable/btn_background"
+            android:background="@drawable/button"
             android:text="Get OTP"
             android:textAllCaps="false"
             android:textColor="#ffffff"

@@ -9,7 +9,6 @@ import androidx.fragment.app.Fragment;
 
 
 import android.os.Handler;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,12 +24,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.pgames.flow.CustomFragmentEvent;
-import com.pgames.flow.ui.register.FinalRegister;
+import com.pgames.flow.HomeActivity;
 import com.pgames.flow.ui.login.Login;
-import com.pgames.flow.MainActivity;
 import com.pgames.flow.R;
 import com.pgames.flow.ui.register.RegisterDetails;
-import com.pgames.flow.home;
 import com.pgames.flow.network.CheckInternet;
 import com.pgames.flow.noInternet;
 
@@ -110,7 +107,7 @@ Handler handler;
 
                                                     break;
                                                 case "complete":
-                                                    startActivity(new Intent(getContext(), home.class));
+                                                    startActivity(new Intent(getContext(), HomeActivity.class));
                                                     getActivity().finish();
                                                     break;
                                                 default:

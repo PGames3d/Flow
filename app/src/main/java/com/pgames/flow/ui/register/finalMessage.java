@@ -12,7 +12,7 @@ import android.widget.Button;
 
 import com.pgames.flow.R;
 import com.pgames.flow.firebaseHandler.*;
-import com.pgames.flow.home;
+import com.pgames.flow.HomeActivity;
 
 public class finalMessage extends Fragment{
     private Button button;
@@ -31,7 +31,7 @@ public class finalMessage extends Fragment{
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    startActivity(new Intent(getContext(), home.class));
+                    startActivity(new Intent(getContext(), HomeActivity.class));
                     getActivity().finish();
                }
             });

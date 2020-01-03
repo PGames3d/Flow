@@ -29,7 +29,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="120dp"
-        android:background="@drawable/completion_mark"
+        android:background="@drawable/completion"
         android:layout_gravity="center"
         style="@style/Widget.AppCompat.Button.Borderless"
         />

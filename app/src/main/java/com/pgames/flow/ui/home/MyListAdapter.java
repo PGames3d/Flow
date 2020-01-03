@@ -7,7 +7,6 @@ import android.content.pm.PackageManager;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
-import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,11 +14,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 import androidx.core.app.ActivityCompat;
@@ -30,16 +27,12 @@ import com.bumptech.glide.load.DataSource;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.engine.GlideException;
 import com.bumptech.glide.request.RequestListener;
-import com.bumptech.glide.request.RequestOptions;
 import com.bumptech.glide.request.target.Target;
 import com.pgames.flow.R;
-import com.pgames.flow.home;
 
 import java.util.ArrayList;
 
-import static android.widget.ListPopupWindow.MATCH_PARENT;
 import static androidx.core.app.ActivityCompat.requestPermissions;
-import static androidx.core.content.ContextCompat.startActivity;
 
 public class MyListAdapter extends RecyclerView.Adapter<MyListAdapter.ViewHolder> {
     private ArrayList<MyListData> listdata;
@@ -72,23 +65,23 @@ public class MyListAdapter extends RecyclerView.Adapter<MyListAdapter.ViewHolder
         holder.work.setText(listdata.get(position).getWork());
 
 //        Glide.with(mContext).load(listdata.get(position).getProfilePic()).apply(RequestOptions.circleCropTransform()).into(holder.profileImg);
-        Glide.with(mContext)
-                .load(listdata.get(position).getProfilePic())
-                .centerCrop()
-                .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .listener(new RequestListener<Drawable>() {
-                    @Override
-                    public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
-                        Log.e("IMAGE_EXCEPTION", "Exception " + e.toString());
-                        return false;
-                    }
-
-                    @Override
-                    public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
-                        return false;
-                    }
-                })
-                .into(holder.profileImg);
+//        Glide.with(mContext)
+//                .load(listdata.get(position).getProfilePic())
+//                .centerCrop()
+//                .diskCacheStrategy(DiskCacheStrategy.ALL)
+//                .listener(new RequestListener<Drawable>() {
+//                    @Override
+//                    public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {
+//                        Log.e("IMAGE_EXCEPTION", "Exception " + e.toString());
+//                        return false;
+//                    }
+//
+//                    @Override
+//                    public boolean onResourceReady(Drawable resource, Object model, Target<Drawable> target, DataSource dataSource, boolean isFirstResource) {
+//                        return false;
+//                    }
+//                })
+//                .into(holder.profileImg);
 
         holder.linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -101,6 +94,7 @@ public class MyListAdapter extends RecyclerView.Adapter<MyListAdapter.ViewHolder
                     public void onClick(View v) {
            //             Toast.makeText(mContext, listdata.get(position).getPhone() + "Calling", Toast.LENGTH_SHORT).show();
                         Intent callIntent = new Intent(Intent.ACTION_CALL);
+                        callIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                         callIntent.setData(Uri.parse("tel:"+listdata.get(position).getPhone()));
                         if (ActivityCompat.checkSelfPermission(mContext, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED ) {
                             Toast.makeText(mContext, "First enable Calling permissions in settings.", Toast.LENGTH_LONG).show();
@@ -146,4 +140,5 @@ public class MyListAdapter extends RecyclerView.Adapter<MyListAdapter.ViewHolder
             this.call = (Button) itemView.findViewById(R.id.call);
         }
     }
+
 }

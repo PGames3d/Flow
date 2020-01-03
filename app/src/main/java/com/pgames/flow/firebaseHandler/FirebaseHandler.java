@@ -12,7 +12,9 @@ public interface FirebaseHandler {
     //Required variables
     FirebaseUser mUser = FirebaseAuth.getInstance().getCurrentUser();
     DatabaseReference mData = FirebaseDatabase.getInstance().getReference().child("user").child(mUser.getUid());
+    DatabaseReference mValidateData = FirebaseDatabase.getInstance().getReference();
     Map<String,Object> mUserMap = new HashMap<>();
+
 
     //Required methods
     void addData();

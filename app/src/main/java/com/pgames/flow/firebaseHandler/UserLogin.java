@@ -1,7 +1,5 @@
 package com.pgames.flow.firebaseHandler;
 
-import android.content.Intent;
-
 import androidx.annotation.NonNull;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -13,7 +11,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.pgames.flow.MainActivity;
 import com.pgames.flow.R;
-import com.pgames.flow.home;
 import com.pgames.flow.ui.register.FinalRegister;
 import com.pgames.flow.ui.register.RegisterDetails;
 import com.pgames.flow.ui.register.finalMessage;
