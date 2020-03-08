@@ -202,7 +202,7 @@ public class FinalRegister extends Fragment implements FirebaseHandler {
                                     mDataMap.put("Personal/Profile-Status","complete");
                                     mDataMap.put("User-Type/User",mUserType.getSelectedItem().toString());
                                     mDataMap.put("User-Type/Requirement",mGetRequirement.getSelectedItem().toString());
-                                    mData.addValueEventListener(new ValueEventListener() {
+                                    mData.addListenerForSingleValueEvent(new ValueEventListener() {
                                         @Override
                                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
@@ -238,6 +238,7 @@ public class FinalRegister extends Fragment implements FirebaseHandler {
 
 
         }
+
                 return view;
             }
 

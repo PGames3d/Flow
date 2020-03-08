@@ -39,7 +39,9 @@ public class DataTransportor {
             Type = "",
             work = "",
             profilepic = "";
+    public DataTransportor(){
 
+    }
     public DataTransportor(String name, String district, String taluka, String goan, String pin, String address, String type, String work, String profilepic) {
         Name = name;
         District = district;

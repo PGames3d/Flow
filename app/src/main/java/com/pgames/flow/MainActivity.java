@@ -6,6 +6,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 
+import com.google.firebase.database.FirebaseDatabase;
 import com.pgames.flow.ui.splash.splash;
 
 import org.greenrobot.eventbus.EventBus;
@@ -49,11 +50,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+        FirebaseDatabase.getInstance().goOnline();
         EventBus.getDefault().register(this);
     }
 
     @Override
     protected void onStop() {
+        FirebaseDatabase.getInstance().goOffline();
         EventBus.getDefault().unregister(this);
         super.onStop();
     }

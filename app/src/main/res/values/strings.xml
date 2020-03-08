@@ -23,4 +23,10 @@
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
     <string name="title_activity_maps">Map</string>
+
+
+    <string name="profile_name">Parshuram Pathave</string>
+    <string name="profile_phone">+917350280897</string>
+    <string name="profile_type">I am Jobseeker</string>
+    <string name="profile_address">Kalas Khurd,Akole,422603</string>
 </resources>

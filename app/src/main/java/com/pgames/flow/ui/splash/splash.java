@@ -25,6 +25,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.pgames.flow.CustomFragmentEvent;
 import com.pgames.flow.HomeActivity;
+import com.pgames.flow.dashboard_employee;
 import com.pgames.flow.ui.login.Login;
 import com.pgames.flow.R;
 import com.pgames.flow.ui.register.RegisterDetails;
@@ -42,6 +43,7 @@ Handler handler;
    public static boolean mLoginFlag = false;
    public static Thread loginThread;
    public static boolean isInternet = false;
+   public static Object fragment;
    ImageView imageView;
     Animation anim;
     @Override
@@ -79,14 +81,20 @@ Handler handler;
                         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                         if (user != null) {
                             mLoginFlag = true;
-                            DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("user").child(user.getUid()).child("Personal");
+                            //person child
+                            DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("user").child(user.getUid());
                             databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
                                 @Override
                                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//
+//                                        for (DataSnapshot snapshot:dataSnapshot.child("User-Type").getChildren()){
+//                                            if (snapshot.getKey().equals("User"))
+//                                                if (snapshot.getValue().equals("Employer"))
+//                                                   // Fragment =new dashboard_employee();
+//
+//                                        }
 
-
-
-                                        for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
+                                        for (DataSnapshot dataSnapshot1 : dataSnapshot.child("Personal").getChildren()) {
                                             //String str = dataSnapshot1.getValue().toString();
                                             if (dataSnapshot1.getKey().equals("Profile-Status")) {
                                                 mProfileStatus = dataSnapshot1.getValue().toString();
