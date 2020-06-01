@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EmpPostJob"
+    android:orientation="vertical">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/emp_post_back">
+<RelativeLayout
+    android:id="@+id/top_section"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:text="Title"
+        android:textSize="18dp"
+        android:layout_margin="12dp"
+        android:textStyle="bold"/>
+    <Button
+        android:id="@+id/emp_close_post"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_margin="4dp"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:layout_alignParentEnd="true"
+        style="?android:attr/borderlessButtonStyle"
+        android:background="@drawable/close_foreground"/>
+</RelativeLayout>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/top_section"
+    android:layout_above="@id/bottom_section">
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="12dp"
+    android:orientation="vertical">
+    <EditText
+        android:id="@+id/work_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Work Title"
+        android:inputType="text"/>
+    <EditText
+        android:id="@+id/work_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Work Description"
+        android:inputType="textMultiLine"/>
+    <EditText
+        android:id="@+id/work_company"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Company Name"
+        android:inputType="text"/>
+    <EditText
+        android:id="@+id/work_location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="location"
+        android:inputType="text"/>
+    <EditText
+        android:id="@+id/work_skill"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Expected Skill"
+        android:inputType="text"/>
+    <CheckBox
+        android:id="@+id/is_education"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Education Required"/>
+    <EditText
+        android:id="@+id/education"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Education"
+        android:inputType="text"/>
+
+</LinearLayout>
+
+</ScrollView>
+</LinearLayout>
+
+
+
+    <LinearLayout
+        android:id="@+id/bottom_section"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_marginBottom="8dp"
+        android:layout_alignParentBottom="true">
+        <Button
+            android:id="@+id/emp_post_btn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Post"
+            android:textAllCaps="false"
+            android:textColor="@color/backActivity"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:background="@color/profile_text_color"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"/>
+    </LinearLayout>
+</RelativeLayout>
+
+</LinearLayout>

@@ -211,11 +211,11 @@ public class RegisterDetails extends Fragment implements FirebaseHandler {
                     mRegiterProceed.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            mDataMap.put("Personal/Name", mYourName.getText().toString());
-                            mDataMap.put("Personal/Profile-Status", "half");
-                            mDataMap.put("Address/District", mDistrict.getSelectedItem().toString());
-                            mDataMap.put("Address/Taluka", mTaluka.getSelectedItem().toString());
-                            mDataMap.put("Address/Goan", mGoan.getSelectedItem().toString());
+                            mDataMap.put("Name", mYourName.getText().toString());
+                            mDataMap.put("Profile-Status", "half");
+                            mDataMap.put("District", mDistrict.getSelectedItem().toString());
+                            mDataMap.put("Taluka", mTaluka.getSelectedItem().toString());
+                            mDataMap.put("Goan", mGoan.getSelectedItem().toString());
                             //mData.updateChildren(mUserMap);
                             nextAction();
                         }

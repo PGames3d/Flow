@@ -153,8 +153,8 @@ public class Login extends Fragment {
                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                 if (!dataSnapshot.exists()) {
                                     Map<String, Object> userMap = new HashMap<>();
-                                    userMap.put("Personal/Profile-Status", "init");
-                                    userMap.put("Personal/Phone", user.getPhoneNumber());
+                                    userMap.put("Profile-Status", "init");
+                                    userMap.put("Phone", user.getPhoneNumber());
                                     mUserDB.updateChildren(userMap);
                                     userIsLoggedIn();
                                 } else {
@@ -184,7 +184,7 @@ public class Login extends Fragment {
 
         if (user != null) {
 
-            DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("user").child(user.getUid()).child("Personal");
+            DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("user").child(user.getUid());
             databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

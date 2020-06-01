@@ -7,5 +7,6 @@
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="ic_clear_margin">56dp</dimen>
     <dimen name="profile_text_size">20sp</dimen>
+    <dimen name="home_card">12</dimen>
 
 </resources>

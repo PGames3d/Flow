@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".modules.DashRecentCall">
+    <TextView
+        android:id="@+id/dash_total_registrations"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Total Registrations 1000+ Users"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:textAlignment="center"
+        />
+
+    <View
+        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/dash_divider"
+        android:layout_below="@id/dash_total_registrations"/>
+    <TextView
+        android:id="@+id/dash_total_categories"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Total Categories 20+ Work Types"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:textAlignment="center"
+        android:layout_below="@id/dash_total_registrations"
+        />
+
+    <View
+        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/dash_divider"
+        android:layout_below="@id/dash_total_categories"/>
+    <TextView
+        android:id="@+id/dash_total_test1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Total test1"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:textAlignment="center"
+        android:layout_below="@id/dash_total_categories"
+        />
+
+    <View
+        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/dash_divider"
+        android:layout_below="@id/dash_total_test1"
+        />
+    <TextView
+        android:id="@+id/dash_total_test2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Total test1"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:textAlignment="center"
+        android:layout_below="@id/dash_total_test1"
+        />
+
+    <View
+        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/dash_divider"
+        android:layout_below="@id/dash_total_test2"/>
+</LinearLayout>

@@ -2,7 +2,7 @@ package com.pgames.flow.ui.home;
 
 import java.io.Serializable;
 
-class MyListData implements Serializable {
+public class MyListData implements Serializable {
 
     private String name,
             phone,
@@ -10,7 +10,7 @@ class MyListData implements Serializable {
             profilePic,
             work;
 
-    MyListData(String name, String phone, String address, String profilePic, String work) {
+    public MyListData(String name, String phone, String address, String profilePic, String work) {
         this.name = name;
         this.phone = phone;
         this.address = address;

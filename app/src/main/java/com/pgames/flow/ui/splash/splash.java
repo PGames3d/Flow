@@ -25,7 +25,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.pgames.flow.CustomFragmentEvent;
 import com.pgames.flow.HomeActivity;
-import com.pgames.flow.dashboard_employee;
 import com.pgames.flow.ui.login.Login;
 import com.pgames.flow.R;
 import com.pgames.flow.ui.register.RegisterDetails;
@@ -94,7 +93,7 @@ Handler handler;
 //
 //                                        }
 
-                                        for (DataSnapshot dataSnapshot1 : dataSnapshot.child("Personal").getChildren()) {
+                                        for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
                                             //String str = dataSnapshot1.getValue().toString();
                                             if (dataSnapshot1.getKey().equals("Profile-Status")) {
                                                 mProfileStatus = dataSnapshot1.getValue().toString();

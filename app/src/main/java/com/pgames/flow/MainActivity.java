@@ -56,7 +56,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onStop() {
-        FirebaseDatabase.getInstance().goOffline();
         EventBus.getDefault().unregister(this);
         super.onStop();
     }

@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.pgames.flow">
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/logoflow"
+        android:icon="@drawable/nelogo"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/logoflow"
+        android:roundIcon="@drawable/nelogo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity

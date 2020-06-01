@@ -17,7 +17,7 @@
 
     <fragment
         android:id="@+id/nav_dashboard"
-        android:name="com.pgames.flow.Dashboard"
+        android:name="com.pgames.flow.modules.Dashboard"
         android:label="Dashboard"
         tools:layout="@layout/fragment_home" >
         <action
@@ -27,7 +27,7 @@
 
     <fragment
         android:id="@+id/nav_profile"
-        android:name="com.pgames.flow.Profile"
+        android:name="com.pgames.flow.modules.Profile"
         android:label="Profile"
         tools:layout="@layout/fragment_home" >
         <action

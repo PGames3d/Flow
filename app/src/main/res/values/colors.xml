@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#2979FF</color>
-    <color name="colorPrimaryDark">#304FFE</color>
+    <color name="colorPrimaryDark">#000980</color>
     <color name="colorAccent">#D81B60</color>
     <color name="backActivity">#FFFFFF</color>
     <color name="cardColor">#2196F3</color>
@@ -11,4 +11,10 @@
     <color name="delete_text_color">#ffffff</color>
     <color name="profile_card_back">#E0F7FA</color>
     <color name="profile_card_secondary">#E0F7FA</color>
+    <color name="dash_top_relative">#E8F5E9</color>
+    <color name="dash_divider">#494B58</color>
+    <color name="home_card_back">#B388FF</color>
+    <color name="home_card_text">#000000</color>
+    <color name="emp_dash_card_back">#E9E5E5</color>
+    <color name="profile_text_color">#FF2962FF</color>
 </resources>

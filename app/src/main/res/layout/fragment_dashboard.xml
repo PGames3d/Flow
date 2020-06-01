@@ -1,228 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Dashboard">
-<LinearLayout
-    android:background="#0A0f0C"
+    tools:context=".modules.Dashboard"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+<RelativeLayout
+    android:id="@+id/dash_top_relative"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
-
+    android:paddingStart="8dp"
+    android:paddingEnd="8dp"
+    android:paddingBottom="8dp"
+    android:background="@color/dash_top_relative">
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/dash_total_registrations"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Recent Calls"
-        android:textSize="24sp"
-        android:textColor="#ffffff"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Recent Calls"
-        android:textSize="24sp"
-        android:textColor="#ffffff"/>    <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Recent Calls"
-    android:textSize="24sp"
-    android:textColor="#ffffff"/>    <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Recent Calls"
-    android:textSize="24sp"
-    android:textColor="#ffffff"/>    <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Recent Calls"
-    android:textSize="24sp"
-    android:textColor="#ffffff"/>    <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Recent Calls"
-    android:textSize="24sp"
-    android:textColor="#ffffff"/>    <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Recent Calls"
-    android:textSize="24sp"
-    android:textColor="#ffffff"/>    <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Recent Calls"
-    android:textSize="24sp"
-    android:textColor="#ffffff"/>    <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Recent Calls"
-    android:textSize="24sp"
-    android:textColor="#ffffff"/>    <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Recent Calls"
-    android:textSize="24sp"
-    android:textColor="#ffffff"/>    <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Recent Calls"
-    android:textSize="24sp"
-    android:textColor="#ffffff"/>    <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Recent Calls"
-    android:textSize="24sp"
-    android:textColor="#ffffff"/>    <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Recent Calls"
-    android:textSize="24sp"
-    android:textColor="#ffffff"/>    <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Recent Calls"
-    android:textSize="24sp"
-    android:textColor="#ffffff"/>    <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Recent Calls"
-    android:textSize="24sp"
-    android:textColor="#ffffff"/>    <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Recent Calls"
-    android:textSize="24sp"
-    android:textColor="#ffffff"/>    <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Recent Calls"
-    android:textSize="24sp"
-    android:textColor="#ffffff"/>    <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Recent Calls"
-    android:textSize="24sp"
-    android:textColor="#ffffff"/>    <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Recent Calls"
-    android:textSize="24sp"
-    android:textColor="#ffffff"/>    <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Recent Calls"
-    android:textSize="24sp"
-    android:textColor="#ffffff"/>    <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Recent Calls"
-    android:textSize="24sp"
-    android:textColor="#ffffff"/>    <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Recent Calls"
-    android:textSize="24sp"
-    android:textColor="#ffffff"/>    <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Recent Calls"
-    android:textSize="24sp"
-    android:textColor="#ffffff"/>    <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Recent Calls"
-    android:textSize="24sp"
-    android:textColor="#ffffff"/>    <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Recent Calls"
-    android:textSize="24sp"
-    android:textColor="#ffffff"/>    <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Recent Calls"
-    android:textSize="24sp"
-    android:textColor="#ffffff"/>    <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Recent Calls"
-    android:textSize="24sp"
-    android:textColor="#ffffff"/>    <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Recent Calls"
-    android:textSize="24sp"
-    android:textColor="#ffffff"/>    <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Recent Calls"
-    android:textSize="24sp"
-    android:textColor="#ffffff"/>    <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Recent Calls"
-    android:textSize="24sp"
-    android:textColor="#ffffff"/>    <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Recent Calls"
-    android:textSize="24sp"
-    android:textColor="#ffffff"/>    <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Recent Calls"
-    android:textSize="24sp"
-    android:textColor="#ffffff"/>    <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Recent Calls"
-    android:textSize="24sp"
-    android:textColor="#ffffff"/>    <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Recent Calls"
-    android:textSize="24sp"
-    android:textColor="#ffffff"/>    <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Recent Calls"
-    android:textSize="24sp"
-    android:textColor="#ffffff"/>    <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Recent Calls"
-    android:textSize="24sp"
-    android:textColor="#ffffff"/>    <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Recent Calls"
-    android:textSize="24sp"
-    android:textColor="#ffffff"/>    <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Recent Calls"
-    android:textSize="24sp"
-    android:textColor="#ffffff"/>    <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Recent Calls"
-    android:textSize="24sp"
-    android:textColor="#ffffff"/>    <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Recent Calls"
-    android:textSize="24sp"
-    android:textColor="#ffffff"/>    <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Recent Calls"
-    android:textSize="24sp"
-    android:textColor="#ffffff"/>    <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Recent Calls"
-    android:textSize="24sp"
-    android:textColor="#ffffff"/>
+        android:text="Total Registrations 1000+ Users"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:textAlignment="center"
+        />
 
+    <View
+        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/dash_divider"
+        android:layout_below="@id/dash_total_registrations"/>
+    <TextView
+        android:id="@+id/dash_total_categories"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Total Categories 20+ Work Types"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:textAlignment="center"
+        android:layout_below="@id/dash_total_registrations"
+        />
+
+    <View
+        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/dash_divider"
+        android:layout_below="@id/dash_total_categories"/>
+    <TextView
+        android:id="@+id/dash_total_test1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Total test1"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:textAlignment="center"
+        android:layout_below="@id/dash_total_categories"
+        />
+
+    <View
+        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/dash_divider"
+        android:layout_below="@id/dash_total_test1"
+        />
+    <TextView
+        android:id="@+id/dash_total_test2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Total test1"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:textAlignment="center"
+        android:layout_below="@id/dash_total_test1"
+        />
+
+    <View
+        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/dash_divider"
+        android:layout_below="@id/dash_total_test2"/>
+</RelativeLayout>
+        <ScrollView
+            android:id="@+id/dash_scroll_call"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/dash_top_relative">
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="16dp"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp">
+
+    <androidx.cardview.widget.CardView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Recent Calls"/>
+    </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+        </ScrollView>
+
+
+    </RelativeLayout>
 </LinearLayout>
-
-</ScrollView>
